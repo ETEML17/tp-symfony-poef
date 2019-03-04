@@ -43,11 +43,7 @@ class VerbesController extends AbstractController
       $verb = $verbRepository->find($req->get('id'));
 
       $hasWon = $preterit === $verb->getPreterit() && $participePasse === $verb->getParticipepasse();
-
-      if ($hasWon != $hasWon) {
-        return null;
-      }
-
+     
       return new Response($hasWon ? 1 : 0);
     }
 }
